@@ -58,5 +58,18 @@ Temporary Items
 *.resource_order
 *.old
 
+# GameMaker
+.vscode/
+.idea/
+
+# Arquivos temporários/cache
+*.tmp
+*.temp
+*.log
+
+# Sistema
+Thumbs.db
+.DS_Store
+
 # GMRT build directory
 Build
