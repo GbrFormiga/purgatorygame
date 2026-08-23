@@ -188,3 +188,8 @@ else
     image_xscale = -2;
 }
 
+
+
+// SUPER QUANDO ATIVAR ESPECIAL SUPER
+
+//colocar aqui o codiggo do girosflin quando eu cmeçar a escrever ele

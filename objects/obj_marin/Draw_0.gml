@@ -27,3 +27,5 @@ function draw_cooldown_bar(_cooldown, _max, _y)
 draw_cooldown_bar(cooldowndodge, 60, -40);
 //spawnar a barra
 draw_cooldown_bar(atkcooldown, 60, -60);
+//spawnar a barra
+draw_cooldown_bar(superduracao, 60, -80);

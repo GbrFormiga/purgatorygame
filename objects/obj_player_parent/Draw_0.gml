@@ -1,43 +1,18 @@
 draw_self();
 
 
-// barra de cooldown
-function draw_cooldown_bar(_cooldown, _max, _y)
-{
-    if (_cooldown <= 0) return;
-
-    var largura = 30;
-    var altura = 8;
-    var progresso = _cooldown / _max;
-
-    var x1 = x - largura / 2;
-    var y1 = y + _y;
-    var x2 = x + largura / 2;
-    var y2 = y1 + altura;
-
-    draw_set_color(c_black);
-    draw_rectangle(x1 - 1, y1 - 1, x2 + 1, y2 + 1, false);
-
-    draw_set_color(c_white);
-    draw_rectangle(x1, y1, x1 + largura * progresso, y2, false);
-}
-
-
-
-
-
 // Barra de HP
-var largura_barra = 200;
-var altura_barra = 20;
+var largura_barrahp = 200;
+var altura_barrahp = 20;
 var progresso_hp = clamp(hpplayer / hpmaxplayer, 0, 1);
 
 // Fundo da barra
-draw_set_color(c_black);
+draw_set_color(c_white);
 draw_rectangle(
     20,
     20,
-    20 + largura_barra,
-    20 + altura_barra,
+    20 + largura_barrahp,
+    20 + altura_barrahp,
     false
 );
 
@@ -46,8 +21,8 @@ draw_set_color(c_red);
 draw_rectangle(
     20,
     20,
-    20 + largura_barra * progresso_hp,
-    20 + altura_barra,
+    20 + largura_barrahp * progresso_hp,
+    20 + altura_barrahp,
     false
 );
 
@@ -55,6 +30,37 @@ draw_rectangle(
 draw_set_color(c_white);
 
 
+
+
+
+
+// Barra de ENERGIA
+var largura_barraEN = 200;
+var altura_barraEN = 20;
+var progresso_EN = clamp(energia / energia_max, 0, 1);
+
+// Fundo da barra
+draw_set_color(c_white);
+draw_rectangle(
+    20,
+    60,
+    20 + largura_barraEN,
+    60 + altura_barraEN,
+    false
+);
+
+// energia atual
+draw_set_color(c_blue);
+draw_rectangle(
+    20,
+    60,
+    20 + largura_barraEN * progresso_EN,
+    60 + altura_barraEN,
+    false
+);
+
+// Reseta a cor
+draw_set_color(c_white);
 
 
 
