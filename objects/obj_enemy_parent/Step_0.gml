@@ -1,4 +1,4 @@
-if (enemyhitado >= 0)
+if (enemyhitado > 0)
 {
 	enemyhitado--;
     image_blend = c_red;

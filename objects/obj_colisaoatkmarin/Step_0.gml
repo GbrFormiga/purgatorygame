@@ -23,7 +23,7 @@ if (atkduracao <= 0)
 
 var inimigo_atingido = instance_place(x, y, obj_enemy_parent);
 
-if (inimigo_atingido != noone)
+if (inimigo_atingido != noone  && inimigo_atingido.enemyhitado <= 0)
 {
     inimigo_atingido.hpenemy -= 10;
 	inimigo_atingido.enemyhitado = 10 //frames
