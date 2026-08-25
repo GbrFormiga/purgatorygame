@@ -1,6 +1,6 @@
 {
   "$GMSprite":"v2",
-  "%Name":"spr_coelho",
+  "%Name":"spr_passaro",
   "bboxMode":2,
   "bbox_bottom":41,
   "bbox_left":16,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
+    {"$GMSpriteFrame":"v1","%Name":"6911d251-90c3-4e6d-a485-cb11a970c663","name":"6911d251-90c3-4e6d-a485-cb11a970c663","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"v1","%Name":"5a13ad31-974f-4f0b-bd6d-143c204e099c","name":"5a13ad31-974f-4f0b-bd6d-143c204e099c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"62c84953-15ef-433d-a195-9a635ade4acd","name":"62c84953-15ef-433d-a195-9a635ade4acd","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -22,19 +22,19 @@
   "layers":[
     {"$GMImageLayer":"","%Name":"ee5fa1cc-a4d5-49f6-a5b6-b1456b8f3ef0","blendMode":0,"displayName":"default","isLocked":false,"name":"ee5fa1cc-a4d5-49f6-a5b6-b1456b8f3ef0","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"spr_coelho",
+  "name":"spr_passaro",
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"coelho",
-    "path":"folders/sprites/inimigos/coelho.yy",
+    "name":"passaro",
+    "path":"folders/sprites/inimigos/passaro.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"v1",
-    "%Name":"spr_coelho",
+    "%Name":"spr_passaro",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -58,7 +58,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"spr_coelho",
+    "name":"spr_passaro",
     "playback":1,
     "playbackSpeed":30.0,
     "playbackSpeedType":0,
@@ -70,11 +70,11 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5a13ad31-974f-4f0b-bd6d-143c204e099c","path":"sprites/spr_coelho/spr_coelho.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"d7d5bf4b-1c51-4abe-9da3-546e59f3087a","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6911d251-90c3-4e6d-a485-cb11a970c663","path":"sprites/spr_passaro/spr_passaro.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"f8dee60e-eebb-4fdc-9224-73251df0cdd3","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"62c84953-15ef-433d-a195-9a635ade4acd","path":"sprites/spr_coelho/spr_coelho.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"07acb973-81dc-4535-8ce9-a5c0c4e5ca57","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5a13ad31-974f-4f0b-bd6d-143c204e099c","path":"sprites/spr_passaro/spr_passaro.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"d7d5bf4b-1c51-4abe-9da3-546e59f3087a","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

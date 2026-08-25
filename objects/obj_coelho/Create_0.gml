@@ -1,3 +1,6 @@
+//respeita o pai dos enemy
+event_inherited()
+
 //movimentaçãp
 
 spd_coelho = 1;
@@ -13,9 +16,7 @@ direcaoatk_coelho = 0;
 duracaoatk_coelho = 0;
 image_xscale = 2;
 
-//vida coelho
 
-hpmaxcoelho = 30;
-hpcoelho = hpmaxcoelho;
+
 
 

@@ -1,3 +1,6 @@
+//respeita o pai dos enemy
+event_inherited()
+
 // PROCURAR PLAYER
 
 if (estado_coelho == "normal")
@@ -142,7 +145,7 @@ if (estado_coelho == "investida")
 
 // morte
 
-if (hpcoelho <= 0)
+if (hpenemy <= 960)
 {
     instance_destroy();
 }

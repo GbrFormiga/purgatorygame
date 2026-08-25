@@ -15,6 +15,6 @@ atkcooldown = 0;
 energia = 100;
 energia_max = 100;
 
-superativo = 0;
+global.superativo = 0;
 superduracao = 0;
-superduracaomax = 240;
+superduracaomax = 190;

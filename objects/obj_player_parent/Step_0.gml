@@ -39,18 +39,22 @@ if (energia >= energia_max)
 if (mouse_check_button_pressed(mb_right) && energia >= energia_max)
 {
     energia = 0;
-    superativo = 1
+    global.superativo = 1
 	superduracao = superduracaomax;
+	var superlapespada = instance_create_layer(x, y, layer, obj_lapespadasuper);
+	superlapespada.marin_dona = id;
+
 }
 
-if (superativo == 1 && superduracao > 0)
+if (global.superativo == 1 && superduracao > 0)
 {
 	superduracao --;
 }
 
-if (superduracao <= 0 && superativo == 1)
+if (superduracao <= 0 && global.superativo == 1)
 {
- superativo = 0;
+ global.superativo = 0;
+ instance_destroy(obj_lapespadasuper);
+
 }
 
-show_debug_message(superduracao)

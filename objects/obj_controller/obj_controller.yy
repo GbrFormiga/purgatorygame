@@ -30,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_coelhoidle",
+    "path":"sprites/spr_coelhoidle/spr_coelhoidle.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

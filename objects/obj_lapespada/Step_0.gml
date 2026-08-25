@@ -27,3 +27,15 @@ else
 	image_xscale = 3;
 	image_yscale = 3;
 }
+
+//deixar espada nomal invisivel durante o super pra nao ter duas espadas ao mesmo tempo
+
+if (global.superativo >= 1)
+{
+	image_alpha = 0
+}
+
+if (global.superativo <= 0)
+{
+	image_alpha = 1;
+}	

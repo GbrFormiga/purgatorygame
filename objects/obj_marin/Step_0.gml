@@ -114,7 +114,7 @@ if (keyboard_check_pressed(vk_space) && !dodge && cooldowndodge <= 0)
 
 // movimento do dodge
 
-if (dodge)
+if (dodge && global.superativo == 0)
 {
     var dodgeh = lengthdir_x(dodgespd, direcaododge);
 
@@ -151,7 +151,7 @@ if (cooldowndodge > 0)
 // ATAQUE BÁSICO
 // ========================================
 
-if (mouse_check_button_pressed(mb_left) && !atacando_marin && atkcooldown <= 0)
+if (mouse_check_button_pressed(mb_left) && !atacando_marin && atkcooldown <= 0 && global.superativo == 0)
 {
     atacando_marin = true;
     atkcooldown = 15;

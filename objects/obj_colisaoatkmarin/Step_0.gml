@@ -21,11 +21,12 @@ if (atkduracao <= 0)
 
 //dano
 
-var inimigo_atingido = instance_place(x, y, obj_coelho);
+var inimigo_atingido = instance_place(x, y, obj_enemy_parent);
 
 if (inimigo_atingido != noone)
 {
-    inimigo_atingido.hpcoelho -= 10;
+    inimigo_atingido.hpenemy -= 10;
+	inimigo_atingido.enemyhitado = 10 //frames
 	marin_dona.atacando_marin = false;
     instance_destroy();
 }

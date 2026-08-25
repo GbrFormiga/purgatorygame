@@ -1,21 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"obj_coelho",
+  "%Name":"obj_lapespadasuper",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_coelho",
+  "name":"obj_lapespadasuper",
   "overriddenProperties":[],
   "parent":{
-    "name":"inimigos",
-    "path":"folders/objetos/inimigos.yy",
+    "name":"armas",
+    "path":"folders/objetos/armas.yy",
   },
-  "parentObjectId":{
-    "name":"obj_enemy_parent",
-    "path":"objects/obj_enemy_parent/obj_enemy_parent.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -34,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_coelho",
-    "path":"sprites/spr_coelho/spr_coelho.yy",
+    "name":"spr_lapespadasuper",
+    "path":"sprites/spr_lapespadasuper/spr_lapespadasuper.yy",
   },
   "spriteMaskId":null,
   "visible":true,
