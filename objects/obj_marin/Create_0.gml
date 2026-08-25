@@ -17,6 +17,7 @@ ultimavspd = 0;
 
 // Velocidade de movimento
 spd = 3;
+spdatual = spd
 hspd = 0;
 vspd = 0;
 

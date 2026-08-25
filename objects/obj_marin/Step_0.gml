@@ -8,29 +8,42 @@ hspd = 0;
 vspd = 0;
 
 
+//DEFINIR VELOCIDADE ATUAL COM BASE NA VELOCIDADE MAXIMA SEM DEFINIR UM VALOR EXATO
+
+spdatual = spd
+
+//quando  ativar o super ficar rapidona
+if (global.superativo >= 1)
+{
+	spdatual += 2 //quando acabar, volta ao normal no frame q o loop (superativo) acabar
+}
+
+show_debug_message(spdatual)
+
+
 //controles
 
 
 if (keyboard_check(ord("A")))
 {
-    hspd -= spd;
+    hspd -= spdatual;
 
 }
 
 if (keyboard_check(ord("D")))
 {
-    hspd += spd;
+    hspd += spdatual;
 
 }
 
 if (keyboard_check(ord("W")))
 {
-    vspd -= spd;
+    vspd -= spdatual;
 }
 
 if (keyboard_check(ord("S")))
 {
-   vspd += spd;
+   vspd += spdatual;
 }
 
 
@@ -188,8 +201,3 @@ else
     image_xscale = -2;
 }
 
-
-
-// SUPER QUANDO ATIVAR ESPECIAL SUPER
-
-//colocar aqui o codiggo do girosflin quando eu cmeçar a escrever ele
