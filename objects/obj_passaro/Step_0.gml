@@ -159,51 +159,158 @@ if (estadobird == "fly")
 
 if (estadobird == "procurandopouso")
 {
-    // Se já estiver livre, começa a descer
-    if (!place_meeting(x, y, obj_colisao))
+    // Se já estiver em uma área livre, pode pousar exatamente onde está.
+    if (!place_meeting(x, y, obj_colisao) &&
+        !place_meeting(x, y, obj_bordadomundo))
     {
-        estadobird = "pousando";
+        estadobird = "idle";
+
+        sprite_index = spr_birdidle;
+        image_speed = 0;
+
+        tempotiro = 150;
+        alvobird = noone;
     }
     else
     {
-        // Procura o espaço livre mais próximo
+        // Está dentro de uma colisão.
+        // Procura a posição livre mais próxima.
+
         var encontrou_livre = false;
 
-        for (var distancia = 4; distancia <= 200; distancia += 4)
+        for (var distancia = 8; distancia <= 240; distancia += 8)
         {
-            if (!place_meeting(x - distancia, y, obj_colisao) &&
-                !place_meeting(x - distancia, y, obj_bordadomundo))
+            // direita
+            var teste_x = x + distancia;
+            var teste_y = y;
+
+            if (!place_meeting(teste_x, teste_y, obj_colisao) &&
+                !place_meeting(teste_x, teste_y, obj_bordadomundo))
             {
-                xalvopouso = x - distancia;
-                yalvopouso = y;
+                xalvopouso = teste_x;
+                yalvopouso = teste_y;
 
                 encontrou_livre = true;
                 break;
             }
 
-            if (!place_meeting(x + distancia, y, obj_colisao) &&
-                !place_meeting(x + distancia, y, obj_bordadomundo))
+
+            // esquerda
+            teste_x = x - distancia;
+
+            if (!place_meeting(teste_x, teste_y, obj_colisao) &&
+                !place_meeting(teste_x, teste_y, obj_bordadomundo))
             {
-                xalvopouso = x + distancia;
-                yalvopouso = y;
+                xalvopouso = teste_x;
+                yalvopouso = teste_y;
+
+                encontrou_livre = true;
+                break;
+            }
+
+
+            // baixo
+            teste_x = x;
+            teste_y = y + distancia;
+
+            if (!place_meeting(teste_x, teste_y, obj_colisao) &&
+                !place_meeting(teste_x, teste_y, obj_bordadomundo))
+            {
+                xalvopouso = teste_x;
+                yalvopouso = teste_y;
+
+                encontrou_livre = true;
+                break;
+            }
+
+
+            // cima
+            teste_y = y - distancia;
+
+            if (!place_meeting(teste_x, teste_y, obj_colisao) &&
+                !place_meeting(teste_x, teste_y, obj_bordadomundo))
+            {
+                xalvopouso = teste_x;
+                yalvopouso = teste_y;
+
+                encontrou_livre = true;
+                break;
+            }
+
+
+            // diagonais
+
+            // direita + baixo
+            teste_x = x + distancia;
+            teste_y = y + distancia;
+
+            if (!place_meeting(teste_x, teste_y, obj_colisao) &&
+                !place_meeting(teste_x, teste_y, obj_bordadomundo))
+            {
+                xalvopouso = teste_x;
+                yalvopouso = teste_y;
+
+                encontrou_livre = true;
+                break;
+            }
+
+
+            // direita + cima
+            teste_y = y - distancia;
+
+            if (!place_meeting(teste_x, teste_y, obj_colisao) &&
+                !place_meeting(teste_x, teste_y, obj_bordadomundo))
+            {
+                xalvopouso = teste_x;
+                yalvopouso = teste_y;
+
+                encontrou_livre = true;
+                break;
+            }
+
+
+            // esquerda + baixo
+            teste_x = x - distancia;
+            teste_y = y + distancia;
+
+            if (!place_meeting(teste_x, teste_y, obj_colisao) &&
+                !place_meeting(teste_x, teste_y, obj_bordadomundo))
+            {
+                xalvopouso = teste_x;
+                yalvopouso = teste_y;
+
+                encontrou_livre = true;
+                break;
+            }
+
+
+            // esquerda + cima
+            teste_y = y - distancia;
+
+            if (!place_meeting(teste_x, teste_y, obj_colisao) &&
+                !place_meeting(teste_x, teste_y, obj_bordadomundo))
+            {
+                xalvopouso = teste_x;
+                yalvopouso = teste_y;
 
                 encontrou_livre = true;
                 break;
             }
         }
 
+
         if (encontrou_livre)
         {
-            estadobird = "indo_pouso";
+            estadobird = "indopouso";
         }
     }
 }
 
 
 // =====================================================
-// INDO PARA O LOCAL DE POUSO
+// INDO PARA O POUSO
 
-if (estadobird == "indo_pouso")
+if (estadobird == "indopouso")
 {
     var direcaopouso = point_direction(
         x,
@@ -212,9 +319,6 @@ if (estadobird == "indo_pouso")
         yalvopouso
     );
 
-    var hspd_pouso = lengthdir_x(spdbird, direcaopouso);
-    var vspd_pouso = lengthdir_y(spdbird, direcaopouso);
-
     var distpouso = point_distance(
         x,
         y,
@@ -222,30 +326,66 @@ if (estadobird == "indo_pouso")
         yalvopouso
     );
 
+
+    // Chegou no local
     if (distpouso <= spdbird)
     {
         x = xalvopouso;
         y = yalvopouso;
 
-        estadobird = "pousando";
+        estadobird = "idle";
+
+        sprite_index = spr_birdidle;
+        image_speed = 0;
+
+        tempotiro = 150;
+        alvobird = noone;
     }
     else
     {
-        if (!place_meeting(x + hspd_pouso, y, obj_bordadomundo) &&
-            !place_meeting(x + hspd_pouso, y, obj_colisao))
+        var hspd_pouso = lengthdir_x(
+            spdbird,
+            direcaopouso
+        );
+
+        var vspd_pouso = lengthdir_y(
+            spdbird,
+            direcaopouso
+        );
+
+
+        // Movimento horizontal
+        if (!place_meeting(
+            x + hspd_pouso,
+            y,
+            obj_colisao
+        ) &&
+        !place_meeting(
+            x + hspd_pouso,
+            y,
+            obj_bordadomundo
+        ))
         {
             x += hspd_pouso;
         }
 
-        if (!place_meeting(x, y + vspd_pouso, obj_bordadomundo) &&
-            !place_meeting(x, y + vspd_pouso, obj_colisao))
+
+        // Movimento vertical
+        if (!place_meeting(
+            x,
+            y + vspd_pouso,
+            obj_colisao
+        ) &&
+        !place_meeting(
+            x,
+            y + vspd_pouso,
+            obj_bordadomundo
+        ))
         {
             y += vspd_pouso;
         }
     }
 }
-
-
 
 // =====================================================
 // POUSANDO
