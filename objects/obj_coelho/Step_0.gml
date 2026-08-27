@@ -1,6 +1,14 @@
 //respeita o pai dos enemy
 event_inherited()
 
+// morte
+
+if (hpenemy <= 960) //40 de hp
+{
+    instance_destroy();
+}
+
+
 // PROCURAR PLAYER
 
 if (estado_coelho == "normal")
@@ -143,12 +151,6 @@ if (estado_coelho == "investida")
     }
 }
 
-// morte
-
-if (hpenemy <= 960)
-{
-    instance_destroy();
-}
 
 
 // dano ao tocar no player

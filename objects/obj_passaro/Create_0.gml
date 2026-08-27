@@ -14,11 +14,10 @@ spdbird = 2;
 distanciabird = 180;
 tempofly = 0;
 tempotiro = 150;
-xalvopouso = x;
-yalvopouso = y;
+direcaofugabird = 0;
 
 // detecção
-rangebird = 250;
+rangebird = 350;
 tempopreparobird = 60;
 
 

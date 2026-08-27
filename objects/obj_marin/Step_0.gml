@@ -18,7 +18,6 @@ if (global.superativo >= 1)
 	spdatual += 2 //quando acabar, volta ao normal no frame q o loop (superativo) acabar
 }
 
-show_debug_message(spdatual)
 
 
 //controles
