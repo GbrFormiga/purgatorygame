@@ -6,6 +6,7 @@ event_inherited()
 if (hpenemy <= 960) //40 de hp
 {
     instance_destroy();
+	var droplootenemy instance_create_layer(x, y, layer, obj_orbEN)
 }
 
 

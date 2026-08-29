@@ -28,18 +28,11 @@ if (imortalframes == 1)
 
 // ESPECIAL SUPER QUE SE USA QUANDO A BARRA DE ENERGIA ESTIVER CHEIA
 
-if (global.energiaorb > 0)
-{
-    energia += global.energiaorb;
-    global.energiaorb = 0;
-}
-
 //nao passar do limite max
 if (energia >= energia_max)
 {
    energia = energia_max;
 }
-
 
 //usar especial
 if (mouse_check_button_pressed(mb_right) && energia >= energia_max)
@@ -64,8 +57,6 @@ if (superduracao <= 0 && global.superativo == 1)
 
 }
 
-show_debug_message(global.energiaorb)
-show_debug_message(energia)
 
 
 

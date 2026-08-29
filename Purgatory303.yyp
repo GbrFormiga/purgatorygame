@@ -34,6 +34,7 @@
   },
   "name":"Purgatory303",
   "resources":[
+    {"id":{"name":"obj_agua","path":"objects/obj_agua/obj_agua.yy",},},
     {"id":{"name":"obj_bordadomundo","path":"objects/obj_bordadomundo/obj_bordadomundo.yy",},},
     {"id":{"name":"obj_coelho","path":"objects/obj_coelho/obj_coelho.yy",},},
     {"id":{"name":"obj_colisao","path":"objects/obj_colisao/obj_colisao.yy",},},
@@ -49,6 +50,7 @@
     {"id":{"name":"obj_tirobird","path":"objects/obj_tirobird/obj_tirobird.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"bordadomundo","path":"sprites/bordadomundo/bordadomundo.yy",},},
+    {"id":{"name":"spr_aguaplaceholder","path":"sprites/spr_aguaplaceholder/spr_aguaplaceholder.yy",},},
     {"id":{"name":"spr_assets","path":"sprites/spr_assets/spr_assets.yy",},},
     {"id":{"name":"spr_atklapespada","path":"sprites/spr_atklapespada/spr_atklapespada.yy",},},
     {"id":{"name":"spr_birdfly","path":"sprites/spr_birdfly/spr_birdfly.yy",},},
