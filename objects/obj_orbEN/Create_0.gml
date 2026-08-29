@@ -1,0 +1,1 @@
+global.energiaorb = 0

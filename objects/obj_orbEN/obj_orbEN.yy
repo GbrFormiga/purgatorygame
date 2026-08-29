@@ -1,13 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"obj_player_parent",
+  "%Name":"obj_orbEN",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_player_parent",
+  "name":"obj_orbEN",
   "overriddenProperties":[],
   "parent":{
     "name":"elementos",
@@ -32,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_placeholder",
-    "path":"sprites/spr_placeholder/spr_placeholder.yy",
+    "name":"spr_orbEN",
+    "path":"sprites/spr_orbEN/spr_orbEN.yy",
   },
   "spriteMaskId":null,
   "visible":true,
