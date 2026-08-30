@@ -1,10 +1,7 @@
-// segue a direção do mouse
-var direcao_espada = point_direction(
-    marin_dona.x,
-    marin_dona.y,
-    mouse_x,
-    mouse_y
-);
+
+
+// segue a direção da mira da Marin
+var direcao_espada = marin_dona.direcaomira;
 
 // posição ao redor da Marin
 x = marin_dona.x + lengthdir_x(distancia_espada, direcao_espada);
@@ -15,7 +12,7 @@ image_angle = direcao_espada;
 
 
 // muda o sprite de normal pra slash qnd atk e cooldown
-if (marin_dona.atkcooldown > 0)
+if (obj_marin.colisaoatkspawnado > 0)
 {
     sprite_index = spr_atklapespada;
 	image_xscale = 4.5;

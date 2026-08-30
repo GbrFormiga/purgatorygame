@@ -48,7 +48,7 @@ if (energia >= energia_max)
 }
 
 //usar especial
-if ((mouse_check_button_pressed(mb_right) || gamepad_button_check_pressed(0, gp_face3)) //quadrado
+if ((mouse_check_button_pressed(mb_right) || gamepad_button_check_pressed(obj_controller.gamepad_id, gp_face3)) //quadrado
 && energia >= energia_max)
 {
     energia = 0;

@@ -8,12 +8,10 @@ if (keyboard_check(ord("0")))
 
 
 // GAMEPAD - DETECÇÃO
-
-if (gamepad_id == -1 || !gamepad_is_connected(gamepad_id))
+//se ele detectar qualuqer gamepad, vai dar o valor dele de obj_controller.gamepad_id, oq vale pra todos independente do id real do controle
+if (gamepad_id == -1)
 {
-    gamepad_id = -1;
-
-    for (var i = 0; i < gamepad_get_device_count(); i++)
+    for (var i = 0; i < 12; i++)
     {
         if (gamepad_is_connected(i))
         {
@@ -22,3 +20,4 @@ if (gamepad_id == -1 || !gamepad_is_connected(gamepad_id))
         }
     }
 }
+

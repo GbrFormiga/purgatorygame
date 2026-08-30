@@ -35,5 +35,5 @@
     "path":"sprites/spr_colisaoatkmarin/spr_colisaoatkmarin.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

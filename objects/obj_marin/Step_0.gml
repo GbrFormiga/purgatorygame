@@ -32,8 +32,8 @@ var mov_y = keyboard_check(ord("S")) - keyboard_check(ord("W"));
 
 if (obj_controller.gamepad_id != -1)
 {
-    mov_x += gamepad_axis_value(0, gp_axislh);
-    mov_y += gamepad_axis_value(0, gp_axislv);
+    mov_x += gamepad_axis_value(obj_controller.gamepad_id, gp_axislh);
+    mov_y += gamepad_axis_value(obj_controller.gamepad_id, gp_axislv);
 }
 
 // evita velocidade maior na diagonal
@@ -105,7 +105,7 @@ else
 
 // dodge
 
-if ((keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(0, gp_shoulderl)) //L2
+if ((keyboard_check_pressed(vk_space) or gamepad_button_check_pressed(obj_controller.gamepad_id, gp_shoulderl)) or gamepad_button_check_pressed(obj_controller.gamepad_id, gp_shoulderlb) //L2 ou L1
 && !dodge && cooldowndodge <= 0 && !dentrodagua)
 {
     dodge = true;
@@ -170,26 +170,19 @@ if (cooldowndodge > 0)
 
 // MIRA NO CONTROLE E NO MOUSE
 
-var mira_x = gamepad_axis_value(0, gp_axisrh);
-var mira_y = gamepad_axis_value(0, gp_axisrv);
-
-var usando_gamepad = false;
-
 if (obj_controller.gamepad_id != -1)
 {
-    if (point_distance(0, 0, mira_x, mira_y) > 0.25)
-    {
-        usando_gamepad = true;
-    }
-}
+    var mira_x = gamepad_axis_value(obj_controller.gamepad_id, gp_axisrh);
+    var mira_y = gamepad_axis_value(obj_controller.gamepad_id, gp_axisrv);
 
-if (usando_gamepad)
-{
-    direcaomira = point_direction(0, 0, mira_x, mira_y); //controle (anlg direito)
+    if (point_distance(0, 0, mira_x, mira_y) > 0.2)
+    {
+        direcaomira = point_direction(0, 0, mira_x, mira_y);
+    }
 }
 else
 {
-    direcaomira = point_direction(x, y, mouse_x, mouse_y); // mouse
+    direcaomira = point_direction(x, y, mouse_x, mouse_y);
 }
 
 
@@ -200,11 +193,12 @@ else
 // ATAQUE BÁSICO
 
 
-if ((mouse_check_button_pressed(mb_left) || gamepad_button_check_pressed(0, gp_shoulderr)) //R2
+if ((mouse_check_button_pressed(mb_left) or gamepad_button_check(obj_controller.gamepad_id, gp_shoulderr)) or gamepad_button_check(obj_controller.gamepad_id, gp_shoulderrb) //R2 ou R1
 && !atacando_marin && atkcooldown <= 0 && global.superativo == 0)
 {
     atacando_marin = true;
-    atkcooldown = 15;
+    atkcooldown = 30;
+	colisaoatkspawnado = 1;
 
     var atk_marin = instance_create_layer( x, y, layer, obj_colisaoatkmarin );
 
@@ -214,7 +208,14 @@ if ((mouse_check_button_pressed(mb_left) || gamepad_button_check_pressed(0, gp_s
 }
 
 
-// cooldown do ataque
+//tempo que a colision do atk ta spawnado
+
+if (colisaoatkspawnado > 0)
+{
+    colisaoatkspawnado = 0
+}
+
+//cooldown do atk
 
 if (atkcooldown > 0)
 {

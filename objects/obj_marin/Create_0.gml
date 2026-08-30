@@ -3,7 +3,8 @@ event_inherited();
 
 //ataque
 atacando_marin = false;
-atkcooldown = 0; //esse cooldown só determina o tempo q a espada vai fazer a animação de slash e voltar pra normal, oq determina cooldown de verdade é atkduracao q ta no create do obj_colisao da espada
+atkcooldown = 0;
+colisaoatkspawnado = 0;
 
 //dodge
 
@@ -14,6 +15,7 @@ duracaododge = 10;
 dodgespd = 6;
 ultimahspd = 0;
 ultimavspd = 0;
+direcaomira = 0;
 
 // Velocidade de movimento
 spd = 3;

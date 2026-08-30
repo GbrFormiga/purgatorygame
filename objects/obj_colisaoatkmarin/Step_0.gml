@@ -7,8 +7,12 @@ y = marin_dona.y + lengthdir_y(65, atkdirecao_marin);
 image_angle = atkdirecao_marin;
 
 
-//cooldown
-atkduracao--;
+if (obj_marin.colisaoatkspawnado == 1 && atkduracao == 0)
+{
+ atkduracao = 10
+ atkduracao --;
+}
+
 
 if (atkduracao <= 0)
 {
