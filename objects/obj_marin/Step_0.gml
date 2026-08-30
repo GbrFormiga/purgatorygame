@@ -12,6 +12,13 @@ vspd = 0;
 
 spdatual = spd
 
+//desacelerar dentro daagua
+if (dentrodagua == true)
+{
+    spdatual *= 0.5; //50% mais lerdo
+}
+
+
 //quando  ativar o super ficar rapidona
 if (global.superativo >= 1)
 {
@@ -102,7 +109,7 @@ else
 
 // dodge
 
-if (keyboard_check_pressed(vk_space) && !dodge && cooldowndodge <= 0)
+if (keyboard_check_pressed(vk_space) && !dodge && cooldowndodge <= 0 && !dentrodagua)
 {
     dodge = true;
     duracaododge = 10;
@@ -126,7 +133,7 @@ if (keyboard_check_pressed(vk_space) && !dodge && cooldowndodge <= 0)
 
 // movimento do dodge
 
-if (dodge && global.superativo == 0)
+if (dodge && global.superativo == 0 && !dentrodagua)
 {
     var dodgeh = lengthdir_x(dodgespd, direcaododge);
 

@@ -12,6 +12,8 @@ if (morto == 1)
 }
 
 
+
+
 // imortalidade
 
 if (imortalframes == 1)
@@ -25,6 +27,17 @@ if (imortalframes == 1)
         imortalframes = 0;
     }
 }
+
+
+
+
+
+//agua
+dentrodagua = false;
+dentrodagua = place_meeting(x, y, obj_agua);
+
+
+
 
 // ESPECIAL SUPER QUE SE USA QUANDO A BARRA DE ENERGIA ESTIVER CHEIA
 

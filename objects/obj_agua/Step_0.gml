@@ -1,5 +1,9 @@
-if place_meeting(x, y, obj_player_parent)
+if (place_meeting(x, y, obj_player_parent))
 {
-	obj_marin.spdatual -= 5;
-	dentrodagua = 1
+    var playernagua = instance_place(x, y, obj_player_parent);
+    
+    if (playernagua != noone)
+    {
+        playernagua.dentrodagua = true;
+    }
 }

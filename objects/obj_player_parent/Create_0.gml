@@ -20,3 +20,4 @@ energia_max = 100;
 global.superativo = 0;
 superduracao = 0;
 superduracaomax = 190;
+dentrodagua = false;

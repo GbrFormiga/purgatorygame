@@ -21,6 +21,7 @@ spdatual = spd
 hspd = 0;
 vspd = 0;
 
+
 //seta sprite inicial
 sprite_index = spr_marin; 
 image_index = 0;            
