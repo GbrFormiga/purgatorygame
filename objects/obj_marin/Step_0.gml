@@ -189,33 +189,29 @@ else
 
 
 
+
+
 // ========================================
 // ATAQUE BÁSICO
 
-
-if ((mouse_check_button_pressed(mb_left) or gamepad_button_check(obj_controller.gamepad_id, gp_shoulderr)) or gamepad_button_check(obj_controller.gamepad_id, gp_shoulderrb) //R2 ou R1
-&& !atacando_marin && atkcooldown <= 0 && global.superativo == 0)
+if ((mouse_check_button_pressed(mb_left)
+or gamepad_button_check(obj_controller.gamepad_id, gp_shoulderr) //R1
+or gamepad_button_check(obj_controller.gamepad_id, gp_shoulderrb)) //R2
+&& !atacando_marin
+&& atkcooldown <= 0
+&& global.superativo == 0)
 {
     atacando_marin = true;
     atkcooldown = 30;
-	colisaoatkspawnado = 1;
 
-    var atk_marin = instance_create_layer( x, y, layer, obj_colisaoatkmarin );
+    var atk_marin = instance_create_layer(x, y, layer, obj_colisaoatkmarin);
 
-	atk_marin.atkdirecao_marin = direcaomira;
-
+    atk_marin.atkdirecao_marin = direcaomira;
     atk_marin.marin_dona = id;
 }
 
 
-//tempo que a colision do atk ta spawnado
-
-if (colisaoatkspawnado > 0)
-{
-    colisaoatkspawnado = 0
-}
-
-//cooldown do atk
+// cooldown do ataque
 
 if (atkcooldown > 0)
 {

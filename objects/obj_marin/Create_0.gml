@@ -4,7 +4,6 @@ event_inherited();
 //ataque
 atacando_marin = false;
 atkcooldown = 0;
-colisaoatkspawnado = 0;
 
 //dodge
 

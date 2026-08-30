@@ -1,6 +1,6 @@
 //configs do atk
 
-atkduracao = 0;
+atkduracao = 10;
 
 atkdirecao_marin = 0;
 

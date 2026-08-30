@@ -12,11 +12,12 @@ image_angle = direcao_espada;
 
 
 // muda o sprite de normal pra slash qnd atk e cooldown
-if (obj_marin.colisaoatkspawnado > 0)
+if (marin_dona.atacando_marin)
 {
     sprite_index = spr_atklapespada;
 	image_xscale = 4.5;
 	image_yscale = 4.5;
+	
 }
 else
 {
@@ -36,3 +37,6 @@ if (global.superativo <= 0)
 {
 	image_alpha = 1;
 }	
+
+
+show_debug_message(obj_marin.atacando_marin)
