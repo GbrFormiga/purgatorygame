@@ -2,7 +2,6 @@
 event_inherited();
 
 //move
-
 // Zera as velocidades a cada frame
 hspd = 0;
 vspd = 0;
@@ -26,31 +25,28 @@ if (global.superativo >= 1)
 }
 
 
+// CONTROLES
 
-//controles
+var mov_x = keyboard_check(ord("D")) - keyboard_check(ord("A"));
+var mov_y = keyboard_check(ord("S")) - keyboard_check(ord("W"));
 
-
-if (keyboard_check(ord("A")))
+if (obj_controller.gamepad_id != -1)
 {
-    hspd -= spdatual;
-
+    mov_x += gamepad_axis_value(0, gp_axislh);
+    mov_y += gamepad_axis_value(0, gp_axislv);
 }
 
-if (keyboard_check(ord("D")))
-{
-    hspd += spdatual;
+// evita velocidade maior na diagonal
+var mov_dist = point_distance(0, 0, mov_x, mov_y);
 
+if (mov_dist > 1)
+{
+    mov_x /= mov_dist;
+    mov_y /= mov_dist;
 }
 
-if (keyboard_check(ord("W")))
-{
-    vspd -= spdatual;
-}
-
-if (keyboard_check(ord("S")))
-{
-   vspd += spdatual;
-}
+hspd = mov_x * spdatual;
+vspd = mov_y * spdatual;
 
 
 // MOVIMENTAÇÃO COM COLISÃO 
@@ -109,7 +105,8 @@ else
 
 // dodge
 
-if (keyboard_check_pressed(vk_space) && !dodge && cooldowndodge <= 0 && !dentrodagua)
+if ((keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(0, gp_shoulderl)) //L2
+&& !dodge && cooldowndodge <= 0 && !dentrodagua)
 {
     dodge = true;
     duracaododge = 10;
@@ -166,23 +163,52 @@ if (cooldowndodge > 0)
 }
 
 
+
+
+
+
+
+// MIRA NO CONTROLE E NO MOUSE
+
+var mira_x = gamepad_axis_value(0, gp_axisrh);
+var mira_y = gamepad_axis_value(0, gp_axisrv);
+
+var usando_gamepad = false;
+
+if (obj_controller.gamepad_id != -1)
+{
+    if (point_distance(0, 0, mira_x, mira_y) > 0.25)
+    {
+        usando_gamepad = true;
+    }
+}
+
+if (usando_gamepad)
+{
+    direcaomira = point_direction(0, 0, mira_x, mira_y); //controle (anlg direito)
+}
+else
+{
+    direcaomira = point_direction(x, y, mouse_x, mouse_y); // mouse
+}
+
+
+
+
+
 // ========================================
 // ATAQUE BÁSICO
-// ========================================
 
-if (mouse_check_button_pressed(mb_left) && !atacando_marin && atkcooldown <= 0 && global.superativo == 0)
+
+if ((mouse_check_button_pressed(mb_left) || gamepad_button_check_pressed(0, gp_shoulderr)) //R2
+&& !atacando_marin && atkcooldown <= 0 && global.superativo == 0)
 {
     atacando_marin = true;
     atkcooldown = 15;
 
     var atk_marin = instance_create_layer( x, y, layer, obj_colisaoatkmarin );
 
-    atk_marin.atkdirecao_marin = point_direction(
-        x,
-        y,
-        mouse_x,
-        mouse_y
-    );
+	atk_marin.atkdirecao_marin = direcaomira;
 
     atk_marin.marin_dona = id;
 }
@@ -196,14 +222,13 @@ if (atkcooldown > 0)
 }
 
 
-// Vira a Marin horizontalmente para o mouse
+// Vira a Marin horizontalmente para onde a mira ta no eixo x
 
-if (mouse_x > x)
-{
-    image_xscale = 2;
-}
-else
+if (direcaomira > 90 && direcaomira < 270)
 {
     image_xscale = -2;
 }
-
+else
+{
+    image_xscale = 2;
+}
