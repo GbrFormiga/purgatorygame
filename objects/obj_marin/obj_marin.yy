@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"players",
-    "path":"folders/objetos/players.yy",
+    "path":"folders/objetos/Rougelike/players.yy",
   },
   "parentObjectId":{
     "name":"obj_player_parent",

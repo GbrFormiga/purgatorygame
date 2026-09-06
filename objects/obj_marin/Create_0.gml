@@ -21,12 +21,16 @@ spd = 3;
 spdatual = spd
 hspd = 0;
 vspd = 0;
+movendo = 0
 
 
-//seta sprite inicial
+//spprites config
 sprite_index = spr_marin; 
-image_index = 0;            
-image_speed = 0.2;       
+image_index = 1;            
+image_speed = 0.2;    
+animstart = 0;
+animend = 2;
+animspd = 0.2;
 
 
 //espada vinculada a ela          

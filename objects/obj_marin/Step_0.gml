@@ -7,6 +7,7 @@ hspd = 0;
 vspd = 0;
 
 
+
 //DEFINIR VELOCIDADE ATUAL COM BASE NA VELOCIDADE MAXIMA SEM DEFINIR UM VALOR EXATO
 
 spdatual = spd
@@ -51,6 +52,17 @@ vspd = mov_y * spdatual;
 
 // MOVIMENTAÇÃO COM COLISÃO 
 // ========================================
+
+if (hspd != 0 or vspd != 0)
+{
+movendo = 1
+}
+if (hspd = 0 && vspd = 0)
+{
+movendo = 0
+}
+
+
 // HORIZONTAL
 
 if (!place_meeting(x + hspd, y, obj_colisao))
@@ -90,22 +102,38 @@ if (hspd != 0 || vspd != 0)
 
 
 // SPRITES
-if (hspd != 0 || vspd != 0)
+
+animspd = image_speed;
+image_index += animspd;
+
+if (image_index >= animend + 1)
 {
-    sprite_index = spr_marinwalk;
-    image_speed = 0.2;
+    image_index = animstart;
 }
-else
+
+if (movendo = 1) //andar
 {
     sprite_index = spr_marin;
-    image_speed = 0;
-    image_index = 0;
+	animstart = 5;
+	animend = 6;
+	image_speed = 0.1;
+
+}
+if (movendo = 0) // parada
+{
+    sprite_index = spr_marin;
+	animstart = 1;
+	animend = 4;
+	animspd = 0.1;
+	image_speed = 0.1;
 }
 
 
 // dodge
 
-if ((keyboard_check_pressed(vk_space) or gamepad_button_check_pressed(obj_controller.gamepad_id, gp_shoulderl)) or gamepad_button_check_pressed(obj_controller.gamepad_id, gp_shoulderlb) //L2 ou L1
+if ((keyboard_check_pressed(vk_space)
+or gamepad_button_check_pressed(obj_controller.gamepad_id, gp_shoulderl)
+or gamepad_button_check_pressed(obj_controller.gamepad_id, gp_shoulderlb)) //L2 ou L1
 && !dodge && cooldowndodge <= 0 && !dentrodagua)
 {
     dodge = true;

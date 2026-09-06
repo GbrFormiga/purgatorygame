@@ -14,4 +14,8 @@ chardir2 = noone;
 cenario = 0;
 
 posicaox = 0;
+<<<<<<< HEAD
 posicaoy = 0;
+=======
+posicaoy = 0;
+>>>>>>> b16319b (sprites novos marin)

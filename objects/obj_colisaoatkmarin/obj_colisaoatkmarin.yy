@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"elementos",
-    "path":"folders/objetos/elementos.yy",
+    "path":"folders/objetos/Rougelike/elementos.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -35,5 +35,5 @@
     "path":"sprites/spr_colisaoatkmarin/spr_colisaoatkmarin.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

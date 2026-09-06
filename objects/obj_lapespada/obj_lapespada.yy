@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"armas",
-    "path":"folders/objetos/armas.yy",
+    "path":"folders/objetos/Rougelike/armas.yy",
   },
   "parentObjectId":null,
   "persistent":false,

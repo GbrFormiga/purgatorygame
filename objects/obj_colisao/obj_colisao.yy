@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"elementos",
-    "path":"folders/objetos/elementos.yy",
+    "path":"folders/objetos/Rougelike/elementos.yy",
   },
   "parentObjectId":null,
   "persistent":false,
