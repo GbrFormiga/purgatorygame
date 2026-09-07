@@ -103,30 +103,56 @@ if (hspd != 0 || vspd != 0)
 
 // SPRITES
 
-animspd = image_speed;
-image_index += animspd;
 
-if (image_index >= animend + 1)
+if (movendo = 1 && animatk = 0 && animdano = 0 && duracaododge = 0) //andar
 {
-    image_index = animstart;
-}
-
-if (movendo = 1) //andar
-{
-    sprite_index = spr_marin;
-	animstart = 5;
-	animend = 6;
-	image_speed = 0.1;
+    sprite_index = spr_marinwalk;
+	image_speed = 0.2;
 
 }
-if (movendo = 0) // parada
+if (movendo = 0 && animatk = 0 && animdano = 0 && duracaododge = 0) // parada
 {
     sprite_index = spr_marin;
-	animstart = 1;
-	animend = 4;
-	animspd = 0.1;
 	image_speed = 0.1;
 }
+
+// ANIMACAO DE ATAQUE
+
+if (animatk > 0)
+{
+	animatk --;
+}
+
+if (animatk > 0 && animdano = 0 && duracaododge = 0)
+{
+    sprite_index = spr_marinatk;
+	image_speed = 0.4;
+}
+
+// ANIMACAO DE DODGE
+
+if (duracaododge > 0 && animatk > 0 && animdano = 0)
+{
+	image_alpha = 0.5
+	sprite_index = spr_marinwalk
+	image_index = 1
+	image_speed = 0
+
+}
+
+if (duracaododge = 0)
+{
+	image_alpha = 1;
+}	
+
+
+
+
+
+
+
+
+
 
 
 // dodge
@@ -137,7 +163,7 @@ or gamepad_button_check_pressed(obj_controller.gamepad_id, gp_shoulderlb)) //L2 
 && !dodge && cooldowndodge <= 0 && !dentrodagua)
 {
     dodge = true;
-    duracaododge = 10;
+    duracaododge = 60;
     cooldowndodge = 60;
 
     if (ultimahspd == 0 && ultimavspd == 0)
@@ -230,6 +256,7 @@ or gamepad_button_check(obj_controller.gamepad_id, gp_shoulderrb)) //R2
 && global.superativo == 0)
 {
     atacando_marin = true;
+	animatk = 10
     atkcooldown = 30;
 
     var atk_marin = instance_create_layer(x, y, layer, obj_colisaoatkmarin);

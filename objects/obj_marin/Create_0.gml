@@ -28,9 +28,8 @@ movendo = 0
 sprite_index = spr_marin; 
 image_index = 1;            
 image_speed = 0.2;    
-animstart = 0;
-animend = 2;
-animspd = 0.2;
+animatk = 0
+animdano = 0
 
 
 //espada vinculada a ela          

@@ -8,7 +8,7 @@ vspd = 0;
 
 
 //seta sprite inicial
-sprite_index = spr_marinplaceholder; 
+sprite_index = spr_marinwplaceholder; 
 image_index = 0;            
 image_speed = 0.2;       
 

@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_marinplaceholder",
-    "path":"sprites/spr_marinplaceholder/spr_marinplaceholder.yy",
+    "name":"spr_marinwplaceholder",
+    "path":"sprites/spr_marinwplaceholder/spr_marinwplaceholder.yy",
   },
   "spriteMaskId":null,
   "visible":true,

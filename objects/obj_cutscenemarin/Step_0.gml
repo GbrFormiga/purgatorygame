@@ -81,7 +81,7 @@ if (hspd != 0 || vspd != 0)
 }
 else
 {
-    sprite_index = spr_marinplaceholder;
+    sprite_index = spr_marinwplaceholder;
     image_speed = 0;
     image_index = 0;
 }

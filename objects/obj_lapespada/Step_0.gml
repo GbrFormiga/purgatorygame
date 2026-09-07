@@ -38,5 +38,3 @@ if (global.superativo <= 0)
 	image_alpha = 1;
 }	
 
-
-show_debug_message(obj_marin.atacando_marin)

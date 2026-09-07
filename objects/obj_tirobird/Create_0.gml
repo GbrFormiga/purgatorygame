@@ -1,7 +1,7 @@
 tempodetela = 180;
 velocidadedeprojetil = 6;
 
-var _player = instance_find(obj_player_parent, 0); //decorou a posiçao q o player ta
+var _player = instance_nearest(x, y, obj_player_parent); //decorou a posiçao q o player MAIS PROXIMO ta
 
 if (instance_exists(_player))
 {
