@@ -8,6 +8,7 @@ vspd = 0;
 
 
 
+
 //DEFINIR VELOCIDADE ATUAL COM BASE NA VELOCIDADE MAXIMA SEM DEFINIR UM VALOR EXATO
 
 spdatual = spd
@@ -131,12 +132,13 @@ if (animatk > 0 && animdano = 0 && duracaododge = 0)
 
 // ANIMACAO DE DODGE
 
-if (duracaododge > 0 && animatk > 0 && animdano = 0)
+if (duracaododge > 0 && animatk = 0 && animdano = 0)
 {
-	image_alpha = 0.5
+	image_alpha = 0.2
 	sprite_index = spr_marinwalk
 	image_index = 1
 	image_speed = 0
+	movendo = 3
 
 }
 
@@ -163,7 +165,7 @@ or gamepad_button_check_pressed(obj_controller.gamepad_id, gp_shoulderlb)) //L2 
 && !dodge && cooldowndodge <= 0 && !dentrodagua)
 {
     dodge = true;
-    duracaododge = 60;
+    duracaododge = 10;
     cooldowndodge = 60;
 
     if (ultimahspd == 0 && ultimavspd == 0)
@@ -191,6 +193,7 @@ if (dodge && global.superativo == 0 && !dentrodagua)
     if (!place_meeting(x + dodgeh, y, obj_colisao))
     {
         x += dodgeh;
+		
     }
 
     var dodgev = lengthdir_y(dodgespd, direcaododge);
@@ -198,6 +201,7 @@ if (dodge && global.superativo == 0 && !dentrodagua)
     if (!place_meeting(x, y + dodgev, obj_colisao))
     {
         y += dodgev;
+		
     }
 
     duracaododge--;
@@ -284,3 +288,5 @@ else
 {
     image_xscale = 2;
 }
+
+show_debug_message(movendo)
