@@ -71,7 +71,7 @@ if (imortalframes > 0)
     image_alpha = 0.2 + (sin(current_time * 0.03) + 1) * 0.3;
 }
 
-if (imortalframes <= 0)
+if (imortalframes <= 0 && obj_marin.movendo != 3)
 {
     image_alpha = 1;
 }

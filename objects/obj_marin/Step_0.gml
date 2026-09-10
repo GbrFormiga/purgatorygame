@@ -102,59 +102,6 @@ if (hspd != 0 || vspd != 0)
 }
 
 
-// SPRITES
-
-// ANIMACAO DE DODGE
-
-if (duracaododge > 0 && animatk == 0 && animdano == 0)
-{
-	image_alpha = 0.2
-	sprite_index = spr_marinwalk
-	image_index = 1
-	image_speed = 0
-	movendo = 3
-
-}
-
-if (duracaododge == 0)
-{
-	image_alpha = 1;
-}	
-
-//movendo e parado
-
-if (movendo == 1 && animatk == 0 && animdano == 0 && duracaododge == 0) //andar
-{
-    sprite_index = spr_marinwalk;
-	image_speed = 0.2;
-
-}
-if (movendo == 0 && animatk == 0 && animdano == 0 && duracaododge == 0) // parada
-{
-    sprite_index = spr_marin;
-	image_speed = 0.1;
-}
-
-// ANIMACAO DE ATAQUE
-
-if (animatk > 0)
-{
-	animatk --;
-}
-
-if (animatk > 0 && animdano == 0 && duracaododge == 0)
-{
-    sprite_index = spr_marinatk;
-	image_speed = 0.4;
-}
-
-
-
-
-
-
-
-
 
 
 
@@ -195,6 +142,7 @@ if (dodge && global.superativo == 0 && !dentrodagua)
     if (!place_meeting(x + dodgeh, y, obj_colisao))
     {
         x += dodgeh;
+			movendo = 3
 		
     }
 
@@ -203,6 +151,7 @@ if (dodge && global.superativo == 0 && !dentrodagua)
     if (!place_meeting(x, y + dodgev, obj_colisao))
     {
         y += dodgev;
+			movendo = 3
 		
     }
 
@@ -291,4 +240,72 @@ else
     image_xscale = 2;
 }
 
-show_debug_message(movendo)
+
+
+
+
+
+
+
+
+
+
+
+
+// SPRITES
+
+// ANIMACAO DE DODGE
+
+if (duracaododge > 0 && animatk == 0 && animdano == 0 && movendo == 3)
+{
+	image_alpha = 0.3
+	sprite_index = spr_marinwalk
+	image_index = 2 
+
+}
+
+if (duracaododge == 0)
+{
+	image_alpha = 1;
+}	
+
+//movendo e parado
+
+if (movendo == 1 && animatk == 0 && animdano == 0 && duracaododge == 0) //andar
+{
+    sprite_index = spr_marinwalk;
+	image_speed = 0.2;
+
+}
+if (movendo == 0 && animatk == 0 && animdano == 0 && duracaododge == 0) // parada
+{
+    sprite_index = spr_marin;
+	image_speed = 0.1;
+}
+
+// ANIMACAO DE ATAQUE
+
+if (animatk > 0)
+{
+	animatk --;
+}
+
+if (animatk > 0 && animdano == 0 && duracaododge == 0)
+{
+    sprite_index = spr_marinatk;
+	image_speed = 0.4;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+show_debug_message(animatk)
