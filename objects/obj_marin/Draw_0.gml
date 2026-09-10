@@ -30,15 +30,3 @@ draw_cooldown_bar(atkcooldown, 60, -60);
 //spawnar a barra
 draw_cooldown_bar(superduracao, 60, -80);
 
-
-
-//dash deixar meio transparente
-if (duracaododge > 0 && animatk = 0 && animdano = 0)
-{
-	image_alpha = 0.2
-}
-
-if (duracaododge = 0)
-{
-	image_alpha = 1;
-}	

@@ -58,7 +58,7 @@ if (hspd != 0 or vspd != 0)
 {
 movendo = 1
 }
-if (hspd = 0 && vspd = 0)
+if (hspd == 0 && vspd == 0)
 {
 movendo = 0
 }
@@ -104,14 +104,32 @@ if (hspd != 0 || vspd != 0)
 
 // SPRITES
 
+// ANIMACAO DE DODGE
 
-if (movendo = 1 && animatk = 0 && animdano = 0 && duracaododge = 0) //andar
+if (duracaododge > 0 && animatk == 0 && animdano == 0)
+{
+	image_alpha = 0.2
+	sprite_index = spr_marinwalk
+	image_index = 1
+	image_speed = 0
+	movendo = 3
+
+}
+
+if (duracaododge == 0)
+{
+	image_alpha = 1;
+}	
+
+//movendo e parado
+
+if (movendo == 1 && animatk == 0 && animdano == 0 && duracaododge == 0) //andar
 {
     sprite_index = spr_marinwalk;
 	image_speed = 0.2;
 
 }
-if (movendo = 0 && animatk = 0 && animdano = 0 && duracaododge = 0) // parada
+if (movendo == 0 && animatk == 0 && animdano == 0 && duracaododge == 0) // parada
 {
     sprite_index = spr_marin;
 	image_speed = 0.1;
@@ -124,28 +142,12 @@ if (animatk > 0)
 	animatk --;
 }
 
-if (animatk > 0 && animdano = 0 && duracaododge = 0)
+if (animatk > 0 && animdano == 0 && duracaododge == 0)
 {
     sprite_index = spr_marinatk;
 	image_speed = 0.4;
 }
 
-// ANIMACAO DE DODGE
-
-if (duracaododge > 0 && animatk = 0 && animdano = 0)
-{
-	image_alpha = 0.2
-	sprite_index = spr_marinwalk
-	image_index = 1
-	image_speed = 0
-	movendo = 3
-
-}
-
-if (duracaododge = 0)
-{
-	image_alpha = 1;
-}	
 
 
 
