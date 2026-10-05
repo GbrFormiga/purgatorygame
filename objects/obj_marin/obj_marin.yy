@@ -10,12 +10,12 @@
   "name":"obj_marin",
   "overriddenProperties":[],
   "parent":{
-    "name":"players",
-    "path":"folders/objetos/Rougelike/players.yy",
+    "name":"marin",
+    "path":"folders/objetos/players/marin.yy",
   },
   "parentObjectId":{
-    "name":"obj_player_parent",
-    "path":"objects/obj_player_parent/obj_player_parent.yy",
+    "name":"obj_player",
+    "path":"objects/obj_player/obj_player.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

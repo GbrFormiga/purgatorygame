@@ -10,11 +10,11 @@
   "overriddenProperties":[],
   "parent":{
     "name":"inimigos",
-    "path":"folders/objetos/Rougelike/inimigos.yy",
+    "path":"folders/objetos/inimigos.yy",
   },
   "parentObjectId":{
-    "name":"obj_enemy_parent",
-    "path":"objects/obj_enemy_parent/obj_enemy_parent.yy",
+    "name":"obj_enemy",
+    "path":"objects/obj_enemy/obj_enemy.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

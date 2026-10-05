@@ -1,16 +1,13 @@
 {
   "$GMObject":"",
   "%Name":"obj_agua",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "eventList":[],
   "managed":true,
   "name":"obj_agua",
   "overriddenProperties":[],
   "parent":{
     "name":"elementos",
-    "path":"folders/objetos/Rougelike/elementos.yy",
+    "path":"folders/objetos/elementos.yy",
   },
   "parentObjectId":null,
   "persistent":false,

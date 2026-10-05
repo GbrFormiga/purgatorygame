@@ -1,21 +1,21 @@
 // posição do ataque
 
-x = marin_dona.x + lengthdir_x(65, atkdirecao_marin);
-y = marin_dona.y + lengthdir_y(65, atkdirecao_marin);
+x = obj_marin.x + lengthdir_x(65, obj_marin.atkdirecao_marin);
+y = obj_marin.y + lengthdir_y(65, obj_marin.atkdirecao_marin);
 
 
 // gira pra direção
 
-image_angle = atkdirecao_marin;
+image_angle = obj_marin.atkdirecao_marin;
 
 
 // duração
 
-atkduracao--;
+atkduracao_marin--;
 
-if (atkduracao <= 0)
+if (atkduracao_marin <= 0)
 {
-    obj_marin.atacando_marin = false;
+    obj_marin.atkmarin = false;
     instance_destroy();
     exit;
 }
@@ -23,7 +23,8 @@ if (atkduracao <= 0)
 
 // dano
 
-var inimigo_atingido = instance_place(x, y, obj_enemy_parent);
+
+var inimigo_atingido = instance_place(x, y, obj_enemy); //necessario pra contar q atingiu o mais proximo e nao o parent global
 
 if (inimigo_atingido != noone && inimigo_atingido.enemyhitado <= 0)
 {

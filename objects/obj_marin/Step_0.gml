@@ -1,27 +1,23 @@
 //link parente pai
 event_inherited();
 
-//move
 // Zera as velocidades a cada frame
 hspd = 0;
 vspd = 0;
-
-
-
 
 //DEFINIR VELOCIDADE ATUAL COM BASE NA VELOCIDADE MAXIMA SEM DEFINIR UM VALOR EXATO
 
 spdatual = spd
 
 //desacelerar dentro daagua
-if (dentrodagua == true)
+if (obj_player.dentrodagua == true)
 {
     spdatual *= 0.5; //50% mais lerdo
 }
 
 
 //quando  ativar o super ficar rapidona
-if (global.superativo >= 1)
+if (obj_player.superativo >= 1)
 {
 	spdatual += 2 //quando acabar, volta ao normal no frame q o loop (superativo) acabar
 }
@@ -104,22 +100,20 @@ if (hspd != 0 || vspd != 0)
 
 
 
-
-
 // dodge
 
 if ((keyboard_check_pressed(vk_space)
 or gamepad_button_check_pressed(obj_controller.gamepad_id, gp_shoulderl)
 or gamepad_button_check_pressed(obj_controller.gamepad_id, gp_shoulderlb)) //L2 ou L1
-&& !dodge && cooldowndodge <= 0 && !dentrodagua)
+&& !obj_player.dodge && cooldowndodge <= 0 && !obj_player.dentrodagua)
 {
-    dodge = true;
+    obj_player.dodge = true;
     duracaododge = 10;
     cooldowndodge = 60;
 
     if (ultimahspd == 0 && ultimavspd == 0)
     {
-        direcaododge = image_xscale == 4 ? 180 : 0;
+        direcaododge = image_xscale == 1 ? 180 : 0;
     }
     else
     {
@@ -135,7 +129,7 @@ or gamepad_button_check_pressed(obj_controller.gamepad_id, gp_shoulderlb)) //L2 
 
 // movimento do dodge
 
-if (dodge && global.superativo == 0 && !dentrodagua)
+if (obj_player.dodge == true && obj_player.superativo == 0 && !obj_player.dentrodagua)
 {
     var dodgeh = lengthdir_x(dodgespd, direcaododge);
 
@@ -159,7 +153,7 @@ if (dodge && global.superativo == 0 && !dentrodagua)
 
     if (duracaododge <= 0)
     {
-        dodge = false;
+        obj_player.dodge = false;
     }
 }
 
@@ -200,32 +194,31 @@ else
 
 
 
+
 // ========================================
 // ATAQUE BÁSICO
 
 if ((mouse_check_button_pressed(mb_left)
 or gamepad_button_check(obj_controller.gamepad_id, gp_shoulderr) //R1
 or gamepad_button_check(obj_controller.gamepad_id, gp_shoulderrb)) //R2
-&& !atacando_marin
-&& atkcooldown <= 0
-&& global.superativo == 0)
+&& !atkmarin
+&& atkmarincooldown <= 0
+&& obj_player.superativo == 0)
 {
-    atacando_marin = true;
-	animatk = 10
-    atkcooldown = 30;
+    atkmarin = true;
+    atkmarincooldown = 30;
 
-    var atk_marin = instance_create_layer(x, y, layer, obj_colisaoatkmarin);
+    instance_create_layer(x, y, layer, obj_colisaoatkmarin);
 
-    atk_marin.atkdirecao_marin = direcaomira;
-    atk_marin.marin_dona = id;
+    atkdirecao_marin = direcaomira;
 }
 
 
 // cooldown do ataque
 
-if (atkcooldown > 0)
+if (atkmarincooldown > 0)
 {
-    atkcooldown--;
+    atkmarincooldown--;
 }
 
 
@@ -233,11 +226,11 @@ if (atkcooldown > 0)
 
 if (direcaomira > 90 && direcaomira < 270)
 {
-    image_xscale = -2;
+    image_xscale = -1;
 }
 else
 {
-    image_xscale = 2;
+    image_xscale = 1;
 }
 
 
@@ -256,7 +249,7 @@ else
 
 // ANIMACAO DE DODGE
 
-if (duracaododge > 0 && animatk == 0 && animdano == 0 && movendo == 3)
+if (duracaododge > 0 && atkmarin == 0 && movendo == 3)
 {
 	image_alpha = 0.3
 	sprite_index = spr_marinwalk
@@ -271,13 +264,13 @@ if (duracaododge == 0)
 
 //movendo e parado
 
-if (movendo == 1 && animatk == 0 && animdano == 0 && duracaododge == 0) //andar
+if (movendo == 1 && atkmarin == 0 && duracaododge == 0) //andar
 {
     sprite_index = spr_marinwalk;
 	image_speed = 0.2;
 
 }
-if (movendo == 0 && animatk == 0 && animdano == 0 && duracaododge == 0) // parada
+if (movendo == 0 && atkmarin == 0 && duracaododge == 0) // parada
 {
     sprite_index = spr_marin;
 	image_speed = 0.1;
@@ -285,27 +278,8 @@ if (movendo == 0 && animatk == 0 && animdano == 0 && duracaododge == 0) // parad
 
 // ANIMACAO DE ATAQUE
 
-if (animatk > 0)
-{
-	animatk --;
-}
-
-if (animatk > 0 && animdano == 0 && duracaododge == 0)
+if (atkmarin > 0 && duracaododge == 0)
 {
     sprite_index = spr_marinatk;
 	image_speed = 0.4;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-show_debug_message(animatk)

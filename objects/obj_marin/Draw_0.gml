@@ -1,4 +1,3 @@
-draw_self();
 //link parente pai
 event_inherited();
 
@@ -26,7 +25,8 @@ function draw_cooldown_bar(_cooldown, _max, _y)
 //spawnar a barra
 draw_cooldown_bar(cooldowndodge, 60, -40);
 //spawnar a barra
-draw_cooldown_bar(atkcooldown, 60, -60);
+draw_cooldown_bar(atkmarincooldown, 60, -60);
 //spawnar a barra
-draw_cooldown_bar(superduracao, 60, -80);
+draw_cooldown_bar(obj_player.superduracao, 60, -80);
 
+draw_self();

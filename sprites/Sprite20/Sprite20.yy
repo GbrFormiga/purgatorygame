@@ -33,8 +33,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"sprites",
-    "path":"folders/sprites.yy",
+    "name":"placeholders",
+    "path":"folders/sprites/placeholders.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

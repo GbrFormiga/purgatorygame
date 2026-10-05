@@ -3,7 +3,7 @@ event_inherited()
 
 // morte
 
-if (hpenemy <= 960) //40 de hp
+if (hpenemy <= 9960) //40 de hp
 {
     instance_destroy();
 	var droplootenemy instance_create_layer(x, y, layer, obj_orbEN)
@@ -14,7 +14,7 @@ if (hpenemy <= 960) //40 de hp
 
 if (estado_coelho == "normal")
 {
-    var player_proximo = instance_nearest(x, y, obj_player_parent);
+    var player_proximo = instance_nearest(x, y, obj_player);
 
     if (player_proximo != noone && point_distance(x, y, player_proximo.x, player_proximo.y) <= 250)
     {
@@ -68,11 +68,11 @@ if (estado_coelho == "normal")
 	
 		if (hspd_coelho > 0)
 	{
-		image_xscale = 2;
+		image_xscale = 1;
 	}
 		else if (hspd_coelho < 0)
 	{
-		image_xscale = -2;
+		image_xscale = -1;
 	}
 }
 
@@ -105,11 +105,11 @@ if (estado_coelho == "furia")
     // Vira o coelho horizontalmente para o player
     if (alvo_coelho.x > x)
     {
-        image_xscale = 2;
+        image_xscale = 1;
     }
     else
     {
-        image_xscale = -2;
+        image_xscale = -1;
     }
 }
 
@@ -128,7 +128,6 @@ if (estado_coelho == "investida")
     }
     else
     {
-        estado_coelho = "normal";
         tempodirecao_coelho = 60;
     }
 
@@ -139,7 +138,6 @@ if (estado_coelho == "investida")
     }
     else
     {
-        estado_coelho = "normal";
         tempodirecao_coelho = 60;
     }
 
@@ -155,11 +153,9 @@ if (estado_coelho == "investida")
 
 
 // dano ao tocar no player
-var player_atingido = instance_place(x, y, obj_player_parent);
 
-if (player_atingido != noone && !player_atingido.dodge && player_atingido.imortalframes == 0)
+if (place_meeting(x, y, obj_player) && obj_player.dodge == 0 && obj_player.imortalframes == 0)
 {
-    player_atingido.hpplayer -= 5;
-    player_atingido.imortalframes = 1;
+    obj_player.hpplayer -= 5;
+    obj_player.imortalframes = 1;
 }
-

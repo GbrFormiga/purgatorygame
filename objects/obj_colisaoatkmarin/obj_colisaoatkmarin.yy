@@ -9,8 +9,8 @@
   "name":"obj_colisaoatkmarin",
   "overriddenProperties":[],
   "parent":{
-    "name":"elementos",
-    "path":"folders/objetos/Rougelike/elementos.yy",
+    "name":"marin",
+    "path":"folders/objetos/players/marin.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -35,5 +35,5 @@
     "path":"sprites/spr_colisaoatkmarin/spr_colisaoatkmarin.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

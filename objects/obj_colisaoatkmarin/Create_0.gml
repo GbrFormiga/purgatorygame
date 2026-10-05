@@ -1,12 +1,7 @@
 //configs do atk
 
-atkduracao = 10;
+atkduracao_marin = 10;
 
-atkdirecao_marin = 0;
+image_angle = obj_marin.atkdirecao_marin; //girar pra direção certa quando atacar
 
-// Guarda quem criou o ataque
-marin_dona = noone;
-
-image_angle = atkdirecao_marin; //girar pra direção certa quando atacar
-
-image_xscale = 3
+image_xscale = 1
