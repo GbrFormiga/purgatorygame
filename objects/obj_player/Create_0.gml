@@ -18,11 +18,13 @@ energia_max = 100;
 superativo = 0;
 superduracao = 0;
 superduracaomax = 190;
-dentrodagua = false;
+dentrodagua = 0;
 
 //dodge
 dodge = 1
 
+//moeda
+flowercoins = 0
 
 
 

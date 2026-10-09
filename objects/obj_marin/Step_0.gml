@@ -10,7 +10,9 @@ vspd = 0;
 spdatual = spd
 
 //desacelerar dentro daagua
-if (obj_player.dentrodagua == 1)
+dentrodagua = place_meeting(x, y, obj_agua);
+
+if (dentrodagua == 1)
 {
     spdatual *= 0.5; //50% mais lerdo
 }
@@ -105,7 +107,7 @@ if (hspd != 0 || vspd != 0)
 if ((keyboard_check_pressed(vk_space)
 or gamepad_button_check_pressed(obj_controller.gamepad_id, gp_shoulderl)
 or gamepad_button_check_pressed(obj_controller.gamepad_id, gp_shoulderlb)) //L2 ou L1
-&& !obj_player.dodge && cooldowndodge <= 0 && !obj_player.dentrodagua)
+&& dodge == 0 && cooldowndodge <= 0 && dentrodagua == 0)
 {
     obj_player.dodge = true;
     duracaododge = 10;
@@ -129,7 +131,7 @@ or gamepad_button_check_pressed(obj_controller.gamepad_id, gp_shoulderlb)) //L2 
 
 // movimento do dodge
 
-if (obj_player.dodge == true && obj_player.superativo == 0 && !obj_player.dentrodagua)
+if (dodge == true && superativo == 0 && dentrodagua == 0)
 {
     var dodgeh = lengthdir_x(dodgespd, direcaododge);
 
@@ -153,7 +155,7 @@ if (obj_player.dodge == true && obj_player.superativo == 0 && !obj_player.dentro
 
     if (duracaododge <= 0)
     {
-        obj_player.dodge = false;
+        dodge = false;
     }
 }
 
@@ -164,8 +166,6 @@ if (cooldowndodge > 0)
 {
     cooldowndodge--;
 }
-
-
 
 
 

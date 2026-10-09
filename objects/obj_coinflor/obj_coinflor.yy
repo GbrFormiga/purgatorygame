@@ -1,12 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"obj_orbEN",
+  "%Name":"obj_coinflor",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_orbEN",
+  "name":"obj_coinflor",
   "overriddenProperties":[],
   "parent":{
     "name":"dropaveis",
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_orbEN",
-    "path":"sprites/spr_orbEN/spr_orbEN.yy",
+    "name":"spr_florcoin",
+    "path":"sprites/spr_florcoin/spr_florcoin.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -203,4 +203,3 @@ if (estadobird == "procurandopouso")
     }
 }
 
-show_debug_message(alvobird)

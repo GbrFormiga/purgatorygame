@@ -9,13 +9,5 @@ if character == 1{
 
 }
 
-
-
-
-
-
-
-
-
 // GAMEPAD
 gamepad_id = -1;

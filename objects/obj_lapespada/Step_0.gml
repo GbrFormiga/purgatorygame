@@ -36,3 +36,9 @@ if (obj_player.superativo <= 0)
 	image_alpha = 1;
 }	
 
+
+// deixar invertido o eixo y quando tiver na esquerda
+if obj_marin.direcaomira > 100 && obj_marin.direcaomira < 270{
+image_yscale = -1.5
+}
+
