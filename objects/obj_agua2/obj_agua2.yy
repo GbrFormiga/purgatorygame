@@ -1,17 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"obj_UI",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_agua2",
+  "eventList":[],
   "managed":true,
-  "name":"obj_UI",
+  "name":"obj_agua2",
   "overriddenProperties":[],
   "parent":{
-    "name":"objetos",
-    "path":"folders/objetos.yy",
+    "name":"elementos",
+    "path":"folders/objetos/elementos.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_agua",
+    "path":"objects/obj_agua/obj_agua.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -30,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_assets",
-    "path":"sprites/spr_assets/spr_assets.yy",
+    "name":"spr_agua2",
+    "path":"sprites/spr_agua2/spr_agua2.yy",
   },
   "spriteMaskId":null,
   "visible":true,

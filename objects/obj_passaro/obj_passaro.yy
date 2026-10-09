@@ -1,18 +1,21 @@
 {
   "$GMObject":"",
-  "%Name":"obj_colisaoatkmarin",
+  "%Name":"obj_passaro",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_colisaoatkmarin",
+  "name":"obj_passaro",
   "overriddenProperties":[],
   "parent":{
-    "name":"marin",
-    "path":"folders/objetos/players/marin.yy",
+    "name":"passaro",
+    "path":"folders/objetos/inimigos/passaro.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_enemy",
+    "path":"objects/obj_enemy/obj_enemy.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -31,9 +34,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_colisaoatkmarin",
-    "path":"sprites/spr_colisaoatkmarin/spr_colisaoatkmarin.yy",
+    "name":"spr_birdidle",
+    "path":"sprites/spr_birdidle/spr_birdidle.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

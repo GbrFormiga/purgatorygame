@@ -10,7 +10,7 @@ vspd = 0;
 spdatual = spd
 
 //desacelerar dentro daagua
-if (obj_player.dentrodagua == true)
+if (obj_player.dentrodagua == 1)
 {
     spdatual *= 0.5; //50% mais lerdo
 }
@@ -208,7 +208,7 @@ or gamepad_button_check(obj_controller.gamepad_id, gp_shoulderrb)) //R2
     atkmarin = true;
     atkmarincooldown = 30;
 
-    instance_create_layer(x, y, layer, obj_colisaoatkmarin);
+    instance_create_layer(x, y, "Instances", obj_colisaoatkmarin);
 
     atkdirecao_marin = direcaomira;
 }
@@ -282,4 +282,9 @@ if (atkmarin > 0 && duracaododge == 0)
 {
     sprite_index = spr_marinatk;
 	image_speed = 0.4;
+}
+
+//SUPER ATIVADO
+if superativo >= 1 && superduracao > 0 && !instance_exists(obj_lapespadasuper){
+instance_create_layer(x, y, "Instances", obj_lapespadasuper)
 }

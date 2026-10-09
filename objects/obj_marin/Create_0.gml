@@ -29,9 +29,13 @@ image_index = 1;
 image_speed = 0.2;    
 image_yscale = 1
 image_xscale = 1
+depth -= 1 //camada acima
 
 
 //dodge inicial pra desbugar
 dodge = 1
 x = 512
 y = 448
+
+//spawna espada
+instance_create_layer(x,y, "Instances", obj_lapespada)
