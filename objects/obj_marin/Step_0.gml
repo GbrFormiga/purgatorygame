@@ -109,7 +109,7 @@ or gamepad_button_check_pressed(obj_controller.gamepad_id, gp_shoulderl)
 or gamepad_button_check_pressed(obj_controller.gamepad_id, gp_shoulderlb)) //L2 ou L1
 && dodge == 0 && cooldowndodge <= 0 && dentrodagua == 0)
 {
-    obj_player.dodge = true;
+    dodge = true;
     duracaododge = 10;
     cooldowndodge = 60;
 
@@ -288,3 +288,5 @@ if (atkmarin > 0 && duracaododge == 0)
 if superativo >= 1 && superduracao > 0 && !instance_exists(obj_lapespadasuper){
 instance_create_layer(x, y, "Instances", obj_lapespadasuper)
 }
+
+show_debug_message(dodge)

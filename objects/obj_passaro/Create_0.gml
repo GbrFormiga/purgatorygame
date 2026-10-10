@@ -17,6 +17,7 @@ tempofly = 0;
 tempotiro = 150;
 direcaofugabird = 0;
 
+
 // detecção
 rangebird = 350;
 tempopreparobird = 60;

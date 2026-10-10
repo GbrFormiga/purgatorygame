@@ -57,6 +57,20 @@ draw_rectangle(
     false
 );
 
-// Reseta a cor
+//reseta cor
 draw_set_color(c_white);
 
+
+
+//fundo das moeda
+var largura_florhud = 120;
+var altura_florhud = 130;
+draw_set_color(c_white);
+draw_rectangle(20, 90, largura_florhud, altura_florhud, false);
+
+//contador de moedas
+draw_set_color(rainbowfont);
+draw_text(30, 100, "Flores: " + string(obj_player.flowercoins));
+
+//reseta cor
+draw_set_color(c_white);

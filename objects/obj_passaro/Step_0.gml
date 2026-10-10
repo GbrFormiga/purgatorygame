@@ -4,10 +4,10 @@ event_inherited();
 
 // morte
 
-if (hpenemy <= 9970) //30 de hp
+if (hpenemy <= 9970 && inimigomorto == 0) //30 de hp
 {
+	inimigomorto = 1
     instance_destroy();
-	var droplootenemy instance_create_layer(x, y, layer, obj_orbEN)
 }
 
 

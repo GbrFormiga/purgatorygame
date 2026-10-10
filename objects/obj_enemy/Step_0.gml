@@ -1,3 +1,8 @@
+
+
+
+
+//inimigo hitado
 if (enemyhitado >= 1 && framesdeimortalidadeenemy <= 0)
 {
 	framesdeimortalidadeenemy = 15 //quanto tempo dura a imorribilidade dos bixo

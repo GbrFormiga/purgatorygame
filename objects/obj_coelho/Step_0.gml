@@ -3,10 +3,41 @@ event_inherited()
 
 // morte
 
-if (hpenemy <= 9960) //40 de hp
+if (hpenemy <= 9960 && inimigomorto == 0) //40 de hp
 {
-    instance_destroy();
-	var droplootenemy instance_create_layer(x, y, layer, obj_orbEN)
+    inimigomorto = 1
+
+}
+
+if (inimigomorto == 1){
+
+    var quantidade_drop;
+    var rngdrop = irandom(99);
+
+    if (rngdrop < 30)
+    {
+        quantidade_drop = 1;
+    }
+    else if (rngdrop < 50)
+    {
+        quantidade_drop = 2;
+    }
+	else if (rngdrop < 75)
+    {
+        quantidade_drop = 3;
+    }
+    else
+    {
+        quantidade_drop = 4;
+    }
+
+    for (var i = 0; i < quantidade_drop; i++)
+    {
+        var drop = dropaveis[irandom(array_length(dropaveis) - 1)];
+
+        instance_create_depth(x, y, depth, drop);
+		instance_destroy()
+    }
 }
 
 
@@ -154,8 +185,11 @@ if (estado_coelho == "investida")
 
 // dano ao tocar no player
 
-if (place_meeting(x, y, obj_player) && obj_player.dodge == 0 && obj_player.imortalframes == 0)
+var player_atingido = instance_place(x, y, obj_player);
+
+if (place_meeting(x, y, player_atingido) && player_atingido.dodge == 0 && player_atingido.imortalframes == 0)
 {
     obj_player.hpplayer -= 5;
-    obj_player.imortalframes = 1;
+    player_atingido.imortalframes = 1;
 }
+

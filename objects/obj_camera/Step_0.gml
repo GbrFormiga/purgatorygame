@@ -14,7 +14,7 @@ cameraCAMy = y - 288;
 
 camera_set_view_pos(camera, cameraCAMx, cameraCAMy);
 
-show_debug_message(transicaocamera)
+
 
 
 
